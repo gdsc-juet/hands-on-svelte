@@ -1,47 +1,45 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  import {onMount} from "svelte";
+  import {musicList} from "./musiclist.js";
+
+  let currentSongIndex = 0;
+  let playerState = "play";
+  let audioElement;
+  let mainElement;
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
+<main bind:this={mainElement}>
+    <audio
+            src = {"./files/audio/"+$musicList[currentSongIndex].audio}
+            bind:this = {audioElement}
+            autoplay = "false"
+    >
+    </audio>
+    <div class="player">
+        <div class = "current-song">
+            <div class = "avatar">
+                <img src={$musicList[currentSongIndex].image}>
+            </div>
+            <div class = "song-controls">
+                <h2>
+                    {$musicList[currentSongIndex].name}
+                </h2>
+                <div class = "controls">
+                    <button on:click={prev}>
+                        <i class="fa fa-backward"></i>
+                    </button>
+                    <button on:click={playpause}>
+                        <i class="fa fa-backward"></i>
+                    </button>
+                    <button on:click={prev}>
+                        <i class="fa fa-backward"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
+
 </style>
