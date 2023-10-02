@@ -35,7 +35,7 @@
         color: white;
     }
     .text{
-        padding-left: 12px;
+        padding-left: 8px;
         font-family: 'Montserrat', sans-serif;
     }
     .time{

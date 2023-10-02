@@ -9,7 +9,7 @@ export const musicList = writable([
         author: "Keiko Masuda"
     },
     {
-        image: "Sparkle.jpg",
+        image: "Sparkle.png",
         audio: "Sparkle.mp3",
         name: "Your Name",
         author: "Radwimps"

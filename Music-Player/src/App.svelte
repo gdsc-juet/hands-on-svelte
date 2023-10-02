@@ -104,7 +104,7 @@
                 </div>
                 <div class="song.details">
                     <h2>{music.name}</h2>
-                    <p>{music.artist}</p>
+                    <p>Singer: {music.author}</p>
                 </div>
                 </div>
             {/each}
