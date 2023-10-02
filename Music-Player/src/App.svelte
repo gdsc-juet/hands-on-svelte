@@ -1,6 +1,7 @@
 <script>
   import {onMount} from "svelte";
   import {musicList} from "./musiclist.js";
+  import DigitalClock from "./DigitalClock.svelte";
 
   let currentSongIndex = 0;
   let playerState = "play";
@@ -65,6 +66,9 @@
             autoplay = "False"
     >
     </audio>
+    <div class="Digital-Clock">
+        <DigitalClock></DigitalClock>
+    </div>
     <div class="player">
         <div class = "current-song">
             <div class = "avatar">
@@ -118,6 +122,11 @@ main{
 }
 audio{
     display: none;
+}
+.Digital-Clock{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 30px;
 }
 .player{
     position: absolute;
