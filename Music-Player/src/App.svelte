@@ -17,12 +17,17 @@
   }
 
   function playpause() {
-      if(playerState == "play"){
+      if (playerState === "play") {
           playerState = "pause";
           audioElement.pause();
-      }else{
+      } else {
           playerState = "play";
-          audioElement.play();
+          const playPromise = audioElement.play();
+          if (playPromise !== undefined) {
+              playPromise.then(_ => {}).catch(error => {
+                  console.error("Autoplay failed:", error);
+              });
+          }
       }
   }
 
@@ -186,4 +191,5 @@ audio{
     border-radius: 50%;
     object-fit: cover;
 }
+
 </style>
