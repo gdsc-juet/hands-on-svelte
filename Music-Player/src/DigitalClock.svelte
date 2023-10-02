@@ -29,18 +29,23 @@
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
     main {
         font-size: 55px;
         color: white;
     }
     .text{
-        padding-left: 14px;
+        padding-left: 12px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .time{
+        font-family: 'Montserrat', sans-serif;
     }
 </style>
 
 <main>
     <div class="text">{$clock.day}</div>
-    <div>
+    <div class="time">
         {($clock.hours < 10 ? "0" : "") + $clock.hours}:
         {($clock.minutes < 10 ? "0" : "") + $clock.minutes}:
         {($clock.seconds < 10 ? "0" : "") + $clock.seconds}
