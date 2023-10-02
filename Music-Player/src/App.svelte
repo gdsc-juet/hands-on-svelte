@@ -26,9 +26,9 @@
 
 <main bind:this={mainElement}>
     <audio
-            src = {"./files/audio/"+$musicList[currentSongIndex].audio}
+            src = {"../public/Music/audio/"+$musicList[currentSongIndex].audio}
             bind:this = {audioElement}
-            autoplay = "false"
+            autoplay = ""
     >
     </audio>
     <div class="player">
@@ -45,7 +45,7 @@
                         <i class="fa fa-backward"></i>
                     </button>
                     <button on:click={playpause}>
-                        {#if playerState == "play"}
+                        {#if playerState === "play"}
                             <i class="fa fa-pause"></i>
                         {:else}
                             <i class="fa fa-play"></i>
@@ -60,7 +60,7 @@
         <div class="song-list">
             {#each $musicList as music,i}
                 <div
-                class =" {i==currentSongIndex?"active":""}"
+                class ='{i==currentSongIndex?"active":""}'
                 on:click="{()=>setSong(i)}"
                 >
                 <div class="avatar">
