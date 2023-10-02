@@ -1,36 +1,34 @@
 import { writable } from "svelte/store";
-import Suzume from "/Music/audio/Suzume.mp3";
-import Sparkle from "/Music/audio/Sparkle.mp3"
-import SuzumeP from "/Music/Pictures/Suzume.png"
-import SparkleP from "/Music/Pictures/Sparkle.jpg"
-import PokemonP from "/Music/Pictures/Pokemon.jpg"
-import Pokemon from "/Music/audio/Pokemon.mp3"
-import NoragamiP from "/Music/Pictures/Noragami.png"
-import Noragami from "/Music/audio/Noragami.mp3"
+
 
 export const musicList = writable([
     {
-        image: SuzumeP,
-        audio: Suzume,
+        image: "Suzume.png",
+        audio: "Suzume.mp3",
         name: "Suzume no Tojimari",
-        author: "Shashwat"
+        author: "Keiko Masuda"
     },
     {
-        image: SparkleP,
-        audio: "asdsadasd",
+        image: "Sparkle.jpg",
+        audio: "Sparkle.mp3",
         name: "Your Name",
-        author: "Toka"
+        author: "Radwimps"
     },
     {
-        image: PokemonP,
-        audio: "dfasdsad",
-        name: "Pokemon",
-        author: "Ash"
+        image: "Pokemon.jpg",
+        audio: "Pokemon.mp3",
+        name: "I wanna be the very Best",
+        author: "Jason Peige"
     },
     {
-        image: NoragamiP,
-        audio: "dasdsad",
-        name: "Noragami",
-        author: "Yato"
-    },
+        image: "Noragami.png",
+        audio: "Noragami.mp3",
+        name: "Goya wa Machiawase",
+        author: "Hello Sleepwalkers"
+    },{
+        image: "GOF.jpg",
+        audio: "GOF.mp3",
+        name: "Rain",
+        author: "Senri Oe"
+    }
 ]);

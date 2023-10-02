@@ -7,6 +7,19 @@
   let audioElement;
   let mainElement;
 
+  function setBackground(){
+      let background = `
+      linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.5)),
+      url(/Music/Pictures/${$musicList[currentSongIndex].image}) center no-repeat
+      `;
+      mainElement.style.background = background;
+      mainElement.style.background = "cover";
+  }
+
+  onMount(function(){
+    setBackground();
+  })
+
   function prev(){
       if(currentSongIndex == 0){
           currentSongIndex = $musicList.length-1;
@@ -14,6 +27,7 @@
           currentSongIndex = (currentSongIndex - 1) %$musicList.length;
       }
       playerState = "play";
+      setBackground();
   }
 
   function playpause() {
@@ -34,10 +48,12 @@
   function next(){
       currentSongIndex = (currentSongIndex + 1) %$musicList.length;
       playerState = "play";
+      setBackground();
   }
   function setSong(i){
       currentSongIndex = i;
       playerState = "play";
+      setBackground();
   }
 
 </script>
@@ -46,13 +62,13 @@
     <audio
             src = {"../public/Music/audio/"+$musicList[currentSongIndex].audio}
             bind:this = {audioElement}
-            autoplay = ""
+            autoplay = "False"
     >
     </audio>
     <div class="player">
         <div class = "current-song">
             <div class = "avatar">
-                <img src={$musicList[currentSongIndex].image} alt="music_image">
+                <img src={"/Music/Pictures/"+$musicList[currentSongIndex].image} alt="music_image">
             </div>
             <div class = "song-controls">
                 <h2>{$musicList[currentSongIndex].name}</h2>
@@ -80,7 +96,7 @@
                 on:click="{()=>setSong(i)}"
                 >
                 <div class="avatar">
-                <img src="{music.image}">
+                <img src={"/Music/Pictures/"+music.image}>
                 </div>
                 <div class="song.details">
                     <h2>{music.name}</h2>
@@ -191,5 +207,20 @@ audio{
     border-radius: 50%;
     object-fit: cover;
 }
-
+.player .song-list > div .song-details{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.player .song-list > div .song-details h2{
+    font-size: 16px;
+    margin: 0px 0px 2px;
+    color: #fff;
+}
+.player .song-list > div .song-details p {
+    color: #eee;
+    font-size: 15px;
+    margin: 0px;
+}
 </style>
