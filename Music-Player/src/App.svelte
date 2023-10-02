@@ -34,12 +34,10 @@
     <div class="player">
         <div class = "current-song">
             <div class = "avatar">
-                <img src={$musicList[currentSongIndex].image}>
+                <img src={$musicList[currentSongIndex].image} alt="music_image">
             </div>
             <div class = "song-controls">
-                <h2>
-                    {$musicList[currentSongIndex].name}
-                </h2>
+                <h2>{$musicList[currentSongIndex].name}</h2>
                 <div class = "controls">
                     <button on:click={prev}>
                         <i class="fa fa-backward"></i>
