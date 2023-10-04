@@ -33,7 +33,13 @@ function handleSubmit() {
 
 <div class="flex justify-center">
 <div class="grid grid-cols-1 gap-4 min-w-full md:min-w-[750px]">
-    <h3 class="text-center py-6 text-2xl font-bold">Dump Your Codes</h3>
+    <h3 class="text-center py-6 text-2xl font-bold">
+    <span >DUMP</span>
+    <span >YOUR</span>
+    <span >CODES</span>
+</h3>
+
+
     <div class="card p-4 w-full text-token space-y-4">
     <label class="label">
     <span>Coding Platform</span>
@@ -41,6 +47,8 @@ function handleSubmit() {
         <option value="" disabled selected style="color: #999; opacity: 0.6;">Select a platform</option> <!-- Placeholder -->
         <option value="Codeforces">Codeforces</option>
         <option value="Codechef">Codechef</option>
+		<option value="LeetCode">LeetCode</option>
+		<option value="TopCoder">TopCoder</option>
         <option value="AtCoder">AtCoder</option>
     </select>
 </label>
@@ -63,16 +71,18 @@ function handleSubmit() {
     </label>
     <label class="label">
         <span>
-			Sorce Code
+			Source Code
 		</span>
         <textarea class="textarea" rows="4" placeholder="Enter the source code here..." bind:value={formData.code} />
     </label>
-    <button type="button" class="btn btn-sm variant-filled-primary" on:click={handleSubmit}>
+   <button type="button" class="btn btn-sm variant-filled-primary bg-lime-500 hover:bg-lime-600" on:click={handleSubmit}>
+
         Dump Code
     </button>
     </div>
-    <div class="text-center py-6">
-    <h2  style="font-size: 24px;" >Dumped Codes</h2>
+    <div class="text-center py-6 text-2xl font-bold">
+    <h2 style="font-size: 24px; ">DUMPED CODES</h2>
+
     </div>
     {#each $snippetStore as snippet, index}
     <CodeSnippetCard {snippet} {index} /> <!-- Use curly braces for props -->

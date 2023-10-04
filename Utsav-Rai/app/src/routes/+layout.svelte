@@ -12,11 +12,34 @@
 	storeHighlightJs.set(hljs);
 </script>
 
+
+<style>
+    .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+    }
+		:hover.scroll-to-top {
+			background-color: #55ff00;
+			color: #000;
+			font-display: bold;
+		}
+</style>
+
 <AppShell>
-	<svelte:fragment slot="header">
-		<AppBar>
-			<h1 class="text-left text-2xl font-bold"  >CodeDump</h1>
-		</AppBar>
-	</svelte:fragment>
-	<slot />
+    <svelte:fragment slot="header">
+        <AppBar>
+            <h1 class="text-left text-2xl font-bold">CodeDump</h1>
+        </AppBar>
+    </svelte:fragment>
+    <slot />
 </AppShell>
+
+<button
+    type="button"
+    class="btn btn-sm variant-filled-primary scroll-to-top"
+    on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
+    Scroll To Top
+</button>
