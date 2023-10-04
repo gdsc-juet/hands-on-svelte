@@ -1,0 +1,5 @@
+Sources - https://svelte.dev/docs/introduction
+        - https://www.youtube.com/watch?v=EhYzHu-8wNk
+
+Addition Feature - Added a digital Clock and a function which Shows the current Day to make
+                   the website more appealing
