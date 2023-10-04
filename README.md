@@ -10,7 +10,7 @@ CodeDump is a web application that allows you to store, organize, and share your
 ✅ Toggle between full code view and summary
 ✅ Favorite and star your most-loved code snippets
 ✅ Scroll back to the top with a single click
-https://github.com/utsxvrai/hands-on-svelte/assets/116128086/b33ae8a5-ae4b-48bf-985d-bcb4d6c96682
+
 
 ## Technologies Used 🛠️
 
