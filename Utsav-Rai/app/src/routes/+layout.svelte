@@ -15,7 +15,7 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<AppBar>
-			<h3 class="text-left">CodeShare</h3>
+			<h1 class="text-left text-2xl font-bold"  >CodeDump</h1>
 		</AppBar>
 	</svelte:fragment>
 	<slot />

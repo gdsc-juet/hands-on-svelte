@@ -7,10 +7,10 @@ export const load = (() => {
     // manually change this object here whenever you want
 
     return {
-        snippets: [
+        srcCode: [
             {
-				contestName: "Cooper Codes Snippet",
-				codingPlatform: "html",
+				contestName: "CodeForces",
+				codingPlatform: "",
 				problemId: "A",
 				code: `<div>This is a div</div>`,
 				favorite: false
