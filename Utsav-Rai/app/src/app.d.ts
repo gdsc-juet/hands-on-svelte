@@ -20,7 +20,7 @@ interface CodeSnippet {
 	codingPlatform: string
 	problemId: string
 	code: string
-	favorite: boolean
+	starred: boolean
 	// userCreated : User, createdOn: string
 }
 

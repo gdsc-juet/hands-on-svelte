@@ -1,16 +1,25 @@
 <script lang="ts">
     import { CodeBlock } from "@skeletonlabs/skeleton";
-    import { deleteSnippet, toggleFavorite } from "./SnippetStore";
+    import { deleteSnippet } from "./SnippetStore";
 
     export let snippet: CodeSnippet = {
         contestName: "",
         codingPlatform: "",
         problemId: "",
         code: "",
-        favorite: false
+        starred: false // Added a 'starred' property
     };
 
     export let index: number;
+    let showFullCode = false;
+
+    function toggleFullCode() {
+        showFullCode = !showFullCode;
+    }
+
+    function toggleStarred() {
+        snippet.starred = !snippet.starred;
+    }
 
 </script>
 
@@ -18,11 +27,11 @@
     <header class="card-header">
         <div class="flex justify-between">
             <div>
-                <span>{snippet.contestName} - {snippet.codingPlatform}</span>
+                <span>{snippet.codingPlatform} - {snippet.contestName}</span>
             </div>
             <div class="float-right">
-                <button type="button" class="btn btn-sm variant-filled-secondary" on:click={() => toggleFavorite(index)}>
-                    { snippet.favorite ? "Unfavorite" : "Favorite" }
+                <button type="button" class="btn btn-sm variant-filled-secondary" on:click={toggleStarred}>
+                    {snippet.starred ? "⭐ Starred" : "Star"}
                 </button>
                 <button type="button" class="btn btn-sm variant-filled-error" on:click={() => deleteSnippet(index)}>
                     X
@@ -32,6 +41,18 @@
     </header>
     <section class="p-4">
         <div class="text-lg font-bold mb-2">{snippet.problemId}</div>
-        <CodeBlock lang={snippet.codingPlatform} code={snippet.code}/>
+        {#if showFullCode}
+        <CodeBlock lang={snippet.codingPlatform} code={snippet.code} />
+        <button type="button" class="btn btn-sm variant-filled-primary mt-2" on:click={toggleFullCode}>
+            Show Less
+        </button>
+        {:else}
+        <div class="overflow-hidden h-20">
+            <CodeBlock lang={snippet.codingPlatform} code={snippet.code} />
+        </div>
+        <button type="button" class="btn btn-sm variant-filled-primary mt-2" on:click={toggleFullCode}>
+            Show More
+        </button>
+        {/if}
     </section>
 </div>

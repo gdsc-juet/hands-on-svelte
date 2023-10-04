@@ -9,7 +9,7 @@ export const snippetStore = writable<CodeSnippet[]>([]); // [codesnippet1,codesn
 export function addSnippet(input: CodeSnippetInput) {
     const snippets = get(snippetStore); // $snippetStore -> listen to changes to the value of snippetStore
     snippetStore.update(() => { // CodeSnippet[]
-        return [ { ...input, favorite: false } , ...snippets]
+        return [ { ...input, starred: false } , ...snippets]
     });
 }
 
@@ -29,7 +29,7 @@ export function toggleFavorite(index: number) {
     snippetStore.update(() => { // [ { favorite: true }, { favorite: false } ]  1
         return snippets.map((snippet, snippetIndex) => {
             if(snippetIndex === index) {
-                return { ...snippet, favorite: !snippet.favorite }
+                return { ...snippet, favorite: !snippet.starred }
             }
             return snippet;
         });
