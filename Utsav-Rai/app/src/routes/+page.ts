@@ -9,14 +9,16 @@ export const load = (() => {
     return {
         snippets: [
             {
-				title: "Cooper Codes Snippet",
-				language: "html",
+				contestName: "Cooper Codes Snippet",
+				codingPlatform: "html",
+				problemId: "A",
 				code: `<div>This is a div</div>`,
 				favorite: false
 			},
 			{
-				title: "Cool code snippet",
-				language: "typescript",
+				contestName: "Cool code snippet",
+				codingPlatform: "typescript",
+				problemId: "B",
 				code: `console.log("Subscribe");`,
 				favorite: false
 			}

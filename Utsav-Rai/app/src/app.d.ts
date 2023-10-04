@@ -9,14 +9,16 @@ declare namespace App {
 }
 
 interface CodeSnippetInput {
-	title: string
-	language: string
+	contestName: string
+	codingPlatform: string
+	problemId: string
 	code: string
 }
 
 interface CodeSnippet {
-	title: string
-	language: string
+	contestName: string
+	codingPlatform: string
+	problemId: string
 	code: string
 	favorite: boolean
 	// userCreated : User, createdOn: string
