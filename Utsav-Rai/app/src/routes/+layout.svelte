@@ -21,11 +21,11 @@
         z-index: 999;
     }
 		:hover.scroll-to-top {
-			background-color: #55ff00;
+			background-color: #77ff00;
 			color: #000;
 			font-display: bold;
 		}
-</style>
+</style> 
 
 <AppShell>
     <svelte:fragment slot="header">
